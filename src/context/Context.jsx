@@ -107,7 +107,7 @@ const ContextProvider = ({ children }) => {
                 contents: [{ role: 'user', parts: [{ text: prompt }] }],
             };
             // Use an empty API key, as the Canvas environment will provide it.
-            const apiKey = "your_api";
+            const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
             const res = await fetch(apiUrl, {
